@@ -2,6 +2,7 @@
   "name": "grmo09/laravel-gopay",
   "description": "GoPay integration with Laravel",
   "type": "library",
+  "version": "1.0.0",
   "require": {
     "php": "^7.2",
     "illuminate/support": "6.*",

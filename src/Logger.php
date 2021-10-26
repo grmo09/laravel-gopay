@@ -20,4 +20,9 @@ class Logger implements GoPayLogger
     {
         \GoPay::logHttpCommunication($request, $response);
     }
+    
+    public function log(string $message)
+    {
+        echo "$message\n";
+    }
 }

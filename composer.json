@@ -8,7 +8,7 @@
     "illuminate/config": "6.*|7.*|8.*",
     "illuminate/cache": "6.*|7.*|8.*",
     "illuminate/container": "6.*|7.*|8.*",
-    "gopay/payments-sdk-php": "^1.1"
+    "gopay/payments-sdk-php": "^1.4"
   },
   "license": "MIT",
   "autoload": {

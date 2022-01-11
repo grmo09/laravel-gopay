@@ -15,5 +15,8 @@ return [
         'cs' => 'CZECH'
     ],
 
-    'timeout' => 30
+    'timeout' => 30,
+
+    'sandbox_url' => 'https://gw.sandbox.gopay.com/api',
+    'production_url' => 'https://gate.gopay.cz/api'
 ];

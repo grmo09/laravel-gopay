@@ -33,12 +33,14 @@ class LaravelGoPay
      */
     public function __construct()
     {
+        $debug = filter_var(getenv('APP_DEBUG'), FILTER_VALIDATE_BOOLEAN);
+
         $this->config = [
-            'goid'             => config('gopay.go_id'),
-            'clientId'         => config('gopay.client_id'),
-            'clientSecret'     => config('gopay.client_secret'),
-            'isProductionMode' => !filter_var(getenv('APP_DEBUG'), FILTER_VALIDATE_BOOLEAN),
-            'timeout'          => config('gopay.timeout')
+            'goid'          => config('gopay.go_id'),
+            'clientId'      => config('gopay.client_id'),
+            'clientSecret'  => config('gopay.client_secret'),
+            'gatewayUrl'    => $debug ? config('gopay.sandbox_url') : config('gopay.production_url'),
+            'timeout'       => config('gopay.timeout')
         ];
 
         $fallback = config('app.fallback_locale');

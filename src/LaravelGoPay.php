@@ -10,6 +10,9 @@ use GoPay;
  */
 class LaravelGoPay
 {
+    const API_URL_SANDBOX = 'https://gw.sandbox.gopay.com/api';
+    const API_URL_PRODUCTION = 'https://gate.gopay.cz/api';
+
     /** @var mixed $gopay */
     protected $gopay;
 
@@ -39,7 +42,7 @@ class LaravelGoPay
             'goid'          => config('gopay.go_id'),
             'clientId'      => config('gopay.client_id'),
             'clientSecret'  => config('gopay.client_secret'),
-            'gatewayUrl'    => $debug ? config('gopay.sandbox_url') : config('gopay.production_url'),
+            'gatewayUrl'    => (config('gopay.env') === 'sandbox') ? self::API_URL_SANDBOX : self::API_URL_PRODUCTION,
             'timeout'       => config('gopay.timeout')
         ];
 
